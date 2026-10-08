@@ -1,0 +1,27 @@
+# LLM-Memory
+
+Scoped SQLite conversation storage and exact cosine retrieval.
+
+Owns immutable complete turns, user/conversation scopes, normalized 768-dimensional FP32 vectors, cosine ranking, index identities, deletion, caching and worker fallback. It does not import the generator or classifier. Set LLM_MEMORY_WORKER_PYTHON to the specialist interpreter or LLM_MEMORY_WORKER_COMMAND to a complete argv string. This command is parsed with shlex and never executed through a shell. Exact search is intended for small local stores.
+
+## Development
+
+In the sibling workspace, use `../LLM-From-Scratch/run.py --repo LLM-Memory test`.
+This selects the existing environment and sibling package sources without installing dependencies.
+For a separately installed checkout, run `python -m pytest` after provisioning the documented dependencies and exact sibling version 0.1.0. These packages are local and not published to PyPI.
+
+## Entry points
+
+Import the package modules directly.
+
+## Integration and assets
+
+`../LLM-From-Scratch/compatibility.json` records the complete tested version set.
+Checkpoint weights, tokenizers, datasets and generated logs are referenced by path; none are distributed in this package. Preserve tokenizer fingerprints and architecture lineage. Source provenance is in PROVENANCE.md.
+
+## Validation and limitations
+
+See the central VALIDATION.md for commands, results and unverified large-model checks.
+The original project is preserved unchanged. No model promotion, training pipeline or remote publishing occurs as part of extraction.
+
+# LLM-Memory-PyTorch-Codexa-v1
